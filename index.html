@@ -17,9 +17,7 @@
   font-display: swap;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -133,38 +131,9 @@ body {
 }
 
 .discount-callout {
-  position: relative;
-  display: inline-block;
+  color: #ed2929;
+  font-weight: 900;
   white-space: nowrap;
-  color: #fff;
-  z-index: 1;
-}
-
-/* Centred red circle and arrow */
-
-.discount-annotation {
-  position: absolute;
-  width: 145px;
-  height: 80px;
-  left: 50%;
-  top: -28px;
-  transform: translateX(-50%);
-  overflow: visible;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.discount-annotation ellipse,
-.discount-annotation path {
-  fill: none;
-  stroke: #ed2929;
-  stroke-width: 2.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.discount-annotation path {
-  stroke-width: 3;
 }
 
 /* Signup form */
@@ -175,7 +144,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 0;
 }
 
 .signup-form input[type="email"],
@@ -319,13 +287,8 @@ body {
 }
 
 @media (max-width: 380px) {
-  .logo-foreground {
-    font-size: 72px;
-  }
-
-  .logo-background {
-    font-size: 51px;
-  }
+  .logo-foreground { font-size: 72px; }
+  .logo-background { font-size: 51px; }
 }
 
 @media (max-height: 650px) {
@@ -334,13 +297,8 @@ body {
     padding: 45px 0 25px;
   }
 
-  .logo-stack {
-    height: 175px;
-  }
-
-  .access-area {
-    margin-top: 20px;
-  }
+  .logo-stack { height: 175px; }
+  .access-area { margin-top: 20px; }
 }
 </style>
 </head>
@@ -359,10 +317,7 @@ body {
 
       <span class="logo-foreground">aykay</span>
 
-      <svg
-        class="thread-trail"
-        viewBox="0 0 180 90"
-        aria-hidden="true">
+      <svg class="thread-trail" viewBox="0 0 180 90" aria-hidden="true">
 
         <path d="
           M2 40
@@ -389,41 +344,14 @@ body {
 
   <p class="signup-intro">
     SIGN UP TO NOT MISS THE BIG
-
-    <span class="discount-callout">
-      99%
-
-      <svg
-        class="discount-annotation"
-        viewBox="0 0 150 80"
-        aria-hidden="true">
-
-        <ellipse
-          cx="75"
-          cy="52"
-          rx="39"
-          ry="23"
-          transform="rotate(-5 75 52)"/>
-
-        <path d="
-          M139 4
-          C128 16 115 23 101 29
-          M101 29 L106 16
-          M101 29 L115 28
-        "/>
-
-      </svg>
-    </span>
-
+    <span class="discount-callout">99%</span>
     <br>
     DISCOUNT DROP.
   </p>
 
   <form id="signup-form" class="signup-form" novalidate>
 
-    <label class="sr-only" for="email">
-      Email address
-    </label>
+    <label class="sr-only" for="email">Email address</label>
 
     <input
       id="email"
@@ -461,12 +389,7 @@ body {
       JOIN THE LIST
     </button>
 
-    <p
-      id="signup-status"
-      class="status"
-      role="status"
-      aria-live="polite">
-    </p>
+    <p id="signup-status" class="status" role="status" aria-live="polite"></p>
 
   </form>
 
@@ -484,18 +407,13 @@ body {
 
     </button>
 
-    <div
-      id="password-panel"
-      class="password-panel"
-      hidden>
+    <div id="password-panel" class="password-panel" hidden>
 
       <p>Have an access password?</p>
 
       <form id="access-form" novalidate>
 
-        <label class="sr-only" for="password">
-          Access password
-        </label>
+        <label class="sr-only" for="password">Access password</label>
 
         <input
           id="password"
@@ -511,12 +429,7 @@ body {
 
       </form>
 
-      <p
-        id="access-status"
-        class="status"
-        role="status"
-        aria-live="polite">
-      </p>
+      <p id="access-status" class="status" role="status" aria-live="polite"></p>
 
     </div>
 
