@@ -100,8 +100,6 @@ body {
   text-shadow: 0 0 12px rgba(45, 105, 210, .2);
 }
 
-/* Loose thread trailing from the logo */
-
 .thread-trail {
   position: absolute;
   z-index: 3;
@@ -123,6 +121,8 @@ body {
   filter: drop-shadow(0 0 2px #2865bd);
 }
 
+/* Promotional message */
+
 .signup-intro {
   max-width: 340px;
   color: #ddd;
@@ -131,6 +131,40 @@ body {
   text-align: center;
   margin: 0 0 24px;
 }
+
+.discount-callout {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: #fff;
+  z-index: 1;
+}
+
+.discount-annotation {
+  position: absolute;
+  width: 145px;
+  height: 80px;
+  left: -52px;
+  top: -28px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.discount-annotation ellipse,
+.discount-annotation path {
+  fill: none;
+  stroke: #ed2929;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.discount-annotation path {
+  stroke-width: 3;
+}
+
+/* Signup form */
 
 .signup-form {
   width: 100%;
@@ -212,6 +246,8 @@ body {
   clip: rect(0,0,0,0);
 }
 
+/* Early access */
+
 .access-area {
   width: 100%;
   max-width: 340px;
@@ -256,6 +292,8 @@ body {
   letter-spacing: 2px;
   cursor: pointer;
 }
+
+/* Footer */
 
 .footer {
   width: 100%;
@@ -347,7 +385,37 @@ body {
   </div>
 
   <p class="signup-intro">
-    SIGN UP TO NOT MISS THE BIG 99% DISCOUNT DROP.
+    SIGN UP TO NOT MISS THE BIG
+
+    <span class="discount-callout">
+      99%
+
+      <svg
+        class="discount-annotation"
+        viewBox="0 0 150 80"
+        aria-hidden="true">
+
+        <!-- Red circle around 99% -->
+        <ellipse
+          cx="72"
+          cy="52"
+          rx="37"
+          ry="22"
+          transform="rotate(-7 72 52)"/>
+
+        <!-- Curved arrow pointing towards 99% -->
+        <path d="
+          M139 4
+          C128 16 115 23 101 29
+          M101 29 L106 16
+          M101 29 L115 28
+        "/>
+
+      </svg>
+    </span>
+
+    <br>
+    DISCOUNT DROP.
   </p>
 
   <form id="signup-form" class="signup-form" novalidate>
