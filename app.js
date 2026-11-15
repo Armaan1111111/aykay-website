@@ -1,118 +1,450 @@
 
-const signupForm = document.querySelector('#signup-form');
-const signupStatus = document.querySelector('#signup-status');
-const signupButton = signupForm.querySelector('button[type="submit"]');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
 
-signupForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  signupStatus.textContent = '';
+<title>AYKAY — First Drop 001</title>
 
-  const emailInput = document.querySelector('#email');
-  const email = emailInput.value.trim();
-  const consent = document.querySelector('#consent').checked;
-  const honeypot = signupForm.querySelector('[name="website"]').value;
+<style>
+@font-face {
+  font-family: "Like A Rope";
+  src: url("/fonts/like-a-rope.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-  if (!email || !emailInput.checkValidity()) {
-    signupStatus.textContent = 'Please enter a valid email address.';
-    return;
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #050505;
+}
+
+body {
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.page-shell {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 28px 22px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.landing {
+  width: 100%;
+  max-width: 520px;
+  min-height: calc(100svh - 52px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topline {
+  padding-top: 12px;
+  color: #888;
+  font: 10px monospace;
+  letter-spacing: 4px;
+}
+
+.brand-area {
+  width: 100%;
+  flex: 1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 0 55px;
+}
+
+.logo-stack {
+  position: relative;
+  width: 100%;
+  height: 205px;
+  text-align: center;
+}
+
+.logo-background {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #152b4c;
+  font: 900 clamp(53px, 14vw, 88px)/1 Arial, sans-serif;
+  letter-spacing: 5px;
+  white-space: nowrap;
+  opacity: .65;
+}
+
+.logo-foreground {
+  position: absolute;
+  z-index: 2;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  color: #4385ed;
+  font-family: "Like A Rope", cursive;
+  font-size: clamp(75px, 20vw, 118px);
+  line-height: 1.1;
+  white-space: nowrap;
+  text-shadow: 0 0 12px rgba(45, 105, 210, .2);
+}
+
+.thread-trail {
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 72%;
+  width: 38%;
+  height: 95px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.thread-trail path {
+  fill: none;
+  stroke: #4385ed;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2 3;
+  filter: drop-shadow(0 0 2px #2865bd);
+}
+
+/* Promotional message */
+
+.signup-intro {
+  max-width: 340px;
+  color: #ddd;
+  font: 11px/1.9 monospace;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.discount-callout {
+  color: #ed2929;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* Signup form */
+
+.signup-form {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form input[type="email"],
+.password-panel input {
+  height: 48px;
+  width: 100%;
+  padding: 0 15px;
+  background: transparent;
+  border: 1px solid #333;
+  color: white;
+  font: 11px monospace;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+.signup-form input::placeholder,
+.password-panel input::placeholder {
+  color: #777;
+}
+
+.signup-form input:focus,
+.password-panel input:focus {
+  border-color: #888;
+}
+
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #777;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.consent-row input {
+  margin-top: 2px;
+  accent-color: #e5cc39;
+}
+
+.submit-button {
+  height: 48px;
+  background: #e5cc39;
+  border: 0;
+  color: #050505;
+  font: 700 11px monospace;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #f3dc55;
+}
+
+.submit-button:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.status {
+  color: #aaa;
+  font-size: 11px;
+  text-align: center;
+}
+
+.website-field,
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* Early access */
+
+.access-area {
+  width: 100%;
+  max-width: 340px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.password-toggle {
+  background: none;
+  border: 0;
+  color: #777;
+  font: 10px monospace;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.toggle-mark {
+  margin-left: 12px;
+}
+
+.password-panel {
+  margin-top: 20px;
+}
+
+.password-panel p {
+  color: #888;
+  font-size: 11px;
+}
+
+.password-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.access-submit {
+  height: 42px;
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  font: 11px monospace;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  padding-top: 25px;
+  color: #555;
+  font: 9px monospace;
+  letter-spacing: 2px;
+}
+
+.footer a {
+  color: #777;
+  text-decoration: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 380px) {
+  .logo-foreground { font-size: 72px; }
+  .logo-background { font-size: 51px; }
+}
+
+@media (max-height: 650px) {
+  .brand-area {
+    min-height: 220px;
+    padding: 45px 0 25px;
   }
 
-  if (!consent) {
-    signupStatus.textContent = 'Please tick the box to agree to launch updates.';
-    return;
-  }
+  .logo-stack { height: 175px; }
+  .access-area { margin-top: 20px; }
+}
+</style>
+</head>
 
-  signupButton.disabled = true;
-  signupButton.textContent = 'SENDING';
+<body>
 
-  try {
-    const response = await fetch('/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        consent,
-        website: honeypot
-      })
-    });
+<main class="page-shell">
+<section class="landing">
 
-    const result = await response.json();
+  <div class="topline">FIRST DROP 001</div>
 
-    if (!response.ok) {
-      throw new Error(
-        result.error || 'Something went wrong. Please try again.'
-      );
-    }
+  <div class="brand-area">
+    <div class="logo-stack">
 
-    signupStatus.textContent =
-      'You’re on the list. Keep an eye on your inbox.';
+      <span class="logo-background">AYKAY</span>
 
-    signupForm.reset();
+      <span class="logo-foreground">aykay</span>
 
-  } catch (error) {
-    signupStatus.textContent =
-      error.message === 'Failed to fetch'
-        ? 'Unable to connect. Please try again later.'
-        : error.message;
+      <svg class="thread-trail" viewBox="0 0 180 90" aria-hidden="true">
 
-  } finally {
-    signupButton.disabled = false;
-    signupButton.textContent = 'JOIN THE LIST';
-  }
-});
+        <path d="
+          M2 40
+          C22 26 34 53 52 43
+          C72 31 57 9 43 20
+          C25 34 51 66 77 53
+          C103 40 84 20 103 23
+          C125 26 119 57 139 48
+          C153 42 161 52 174 65
+        "/>
 
-const toggle = document.querySelector('#password-toggle');
-const panel = document.querySelector('#password-panel');
+        <path d="
+          M8 45
+          C29 37 38 60 57 51
+          C76 42 67 29 80 31
+          C95 34 91 64 111 61
+          C132 58 133 37 151 48
+        " opacity=".45"/>
 
-toggle.addEventListener('click', () => {
-  const opening = panel.hidden;
+      </svg>
 
-  panel.hidden = !opening;
-  toggle.setAttribute('aria-expanded', String(opening));
-  toggle.querySelector('.toggle-mark').textContent =
-    opening ? '−' : '+';
+    </div>
+  </div>
 
-  if (opening) {
-    document.querySelector('#password').focus();
-  }
-});
+  <p class="signup-intro">
+    SIGN UP TO NOT MISS THE BIG
+    <span class="discount-callout">99%</span>
+    <br>
+    DISCOUNT DROP.
+  </p>
 
-document.querySelector('#access-form').addEventListener(
-  'submit',
-  async (event) => {
-    event.preventDefault();
+  <form id="signup-form" class="signup-form" novalidate>
 
-    const status = document.querySelector('#access-status');
-    const button = event.currentTarget.querySelector('button');
-    const password = document.querySelector('#password').value;
+    <label class="sr-only" for="email">Email address</label>
 
-    status.textContent = '';
-    button.disabled = true;
+    <input
+      id="email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      placeholder="EMAIL ADDRESS"
+      maxlength="254"
+      required>
 
-    try {
-      const response = await fetch('/api/access', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password })
-      });
+    <div class="consent-row">
 
-      const result = await response.json();
+      <input
+        id="consent"
+        name="consent"
+        type="checkbox"
+        required>
 
-      if (!response.ok) {
-        throw new Error(result.error || 'That password did not work.');
-      }
+      <label for="consent">
+        I agree to receive AYKAY launch updates by email.
+        I can unsubscribe at any time.
+      </label>
 
-      status.textContent =
-        'Access confirmed. Your early-access area is ready to be connected.';
+    </div>
 
-    } catch (error) {
-      status.textContent =
-        error.message === 'Failed to fetch'
-          ? 'Password access will work once the site is deployed.'
-          : error.message;
+    <input
+      class="website-field"
+      type="text"
+      name="website"
+      tabindex="-1"
+      autocomplete="off"
+      aria-hidden="true">
 
-    } finally {
-      button.disabled = false;
-    }
-  }
-);
+    <button class="submit-button" type="submit">
+      JOIN THE LIST
+    </button>
+
+    <p id="signup-status" class="status" role="status" aria-live="polite"></p>
+
+  </form>
+
+  <div class="access-area">
+
+    <button
+      id="password-toggle"
+      class="password-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="password-panel">
+
+      EARLY ACCESS
+      <span class="toggle-mark">+</span>
+
+    </button>
+
+    <div id="password-panel" class="password-panel" hidden>
+
+      <p>Have an access password?</p>
+
+      <form id="access-form" novalidate>
+
+        <label class="sr-only" for="password">Access password</label>
+
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="ENTER PASSWORD"
+          autocomplete="current-password"
+          required>
+
+        <button class="access-submit" type="submit">
+          UNLOCK
+        </button>
+
+      </form>
+
+      <p id="access-status" class="status" role="status" aria-live="polite"></p>
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <span>AYKAY®</span>
+    <span>EST. 2026</span>
+    <a href="/privacy.html">PRIVACY</a>
+  </footer>
+
+</section>
+</main>
+
+<script src="/app.js" defer></script>
+
+</body>
+</html>
