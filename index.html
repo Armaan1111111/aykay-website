@@ -140,12 +140,15 @@ body {
   z-index: 1;
 }
 
+/* Centred red circle and arrow */
+
 .discount-annotation {
   position: absolute;
   width: 145px;
   height: 80px;
-  left: -52px;
+  left: 50%;
   top: -28px;
+  transform: translateX(-50%);
   overflow: visible;
   pointer-events: none;
   z-index: 2;
@@ -395,15 +398,13 @@ body {
         viewBox="0 0 150 80"
         aria-hidden="true">
 
-        <!-- Red circle around 99% -->
         <ellipse
-          cx="72"
+          cx="75"
           cy="52"
-          rx="37"
-          ry="22"
-          transform="rotate(-7 72 52)"/>
+          rx="39"
+          ry="23"
+          transform="rotate(-5 75 52)"/>
 
-        <!-- Curved arrow pointing towards 99% -->
         <path d="
           M139 4
           C128 16 115 23 101 29
