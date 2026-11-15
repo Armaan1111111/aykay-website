@@ -1,11 +1,11 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#050505">
-<title>aykay — First Drop 001</title>
+<title>AYKAY — First Drop 001</title>
 
 <style>
 * { box-sizing: border-box; }
@@ -48,52 +48,55 @@ body {
 .brand-area {
   width: 100%;
   margin-top: auto;
-  margin-bottom: 45px;
+  margin-bottom: 38px;
   text-align: center;
-  overflow: visible;
 }
 
 .logo-stack {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 125px;
   width: 100%;
+  height: 180px;
 }
 
 .logo-background {
   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   color: #172b46;
-  font: 700 clamp(55px, 15vw, 90px) Arial, sans-serif;
+  font: 700 clamp(55px, 15vw, 90px)/1 Arial, sans-serif;
   letter-spacing: 5px;
   white-space: nowrap;
-  opacity: .85;
+  opacity: .8;
 }
 
 .thread-logo {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  width: min(100%, 440px);
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 520px);
   overflow: visible;
 }
 
 .thread {
   fill: none;
   stroke: #83b5ff;
-  stroke-width: 3.5;
+  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 4 5;
+  stroke-dasharray: 3 4;
   filter: drop-shadow(0 0 2px #477fc9);
 }
 
 .signup-intro {
-  color: #aaa;
-  font: 10px monospace;
-  letter-spacing: 3px;
+  max-width: 340px;
+  color: #ddd;
+  font: 11px/1.8 monospace;
+  letter-spacing: 2px;
   text-align: center;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 }
 
 .signup-form {
@@ -213,6 +216,7 @@ body {
   color: white;
   font: 11px monospace;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .footer {
@@ -231,12 +235,10 @@ body {
   text-decoration: none;
 }
 
-[hidden] {
-  display: none !important;
-}
+[hidden] { display: none !important; }
 
 @media (max-height: 650px) {
-  .brand-area { margin-bottom: 25px; }
+  .brand-area { margin-bottom: 22px; }
 }
 </style>
 </head>
@@ -253,59 +255,55 @@ body {
       <span class="logo-background">AYKAY</span>
 
       <svg class="thread-logo"
-        viewBox="0 0 440 130"
+        viewBox="0 0 540 150"
         role="img"
         aria-label="aykay">
 
         <g class="thread">
 
-          <!-- First lowercase a -->
+          <!-- First single-storey a: closed bowl and tall stem -->
           <path d="
-            M52 65
-            C52 44 20 39 14 61
-            C7 87 43 96 52 72
-            C56 61 51 49 51 44
-            M52 44 L52 86
+            M84 63
+            C84 43 69 29 51 29
+            C31 29 18 44 18 64
+            C18 84 31 99 51 99
+            C69 99 84 84 84 64
           "/>
+          <path d="M84 64 L84 17"/>
 
           <!-- y -->
-          <path d="
-            M79 45 L94 81
-            M109 45 L89 101
-            C85 111 77 113 71 108
-          "/>
+          <path d="M119 46 L143 96"/>
+          <path d="M167 46 L143 96
+            C136 112 127 119 113 112"/>
 
           <!-- k -->
-          <path d="
-            M139 27 L139 87
-            M140 66 L169 44
-            M143 65 L171 88
-          "/>
+          <path d="M211 20 L211 101"/>
+          <path d="M212 70 L247 45"/>
+          <path d="M214 69 L249 101"/>
 
-          <!-- Second lowercase a -->
+          <!-- Second single-storey a -->
           <path d="
-            M220 65
-            C220 44 188 39 182 61
-            C175 87 211 96 220 72
-            C224 61 219 49 219 44
-            M220 44 L220 86
+            M335 63
+            C335 43 320 29 302 29
+            C282 29 269 44 269 64
+            C269 84 282 99 302 99
+            C320 99 335 84 335 64
           "/>
+          <path d="M335 64 L335 17"/>
 
           <!-- Final y -->
-          <path d="
-            M247 45 L262 81
-            M277 45 L257 101
-            C253 111 245 113 239 108
-          "/>
+          <path d="M370 46 L394 96"/>
+          <path d="M418 46 L394 96
+            C387 112 378 119 364 112"/>
 
-          <!-- Loose thread trailing off the page -->
+          <!-- Loose thread trailing off the right -->
           <path d="
-            M284 80
-            C310 103 322 112 339 94
-            C356 75 338 60 326 75
-            C313 91 335 112 354 101
-            C373 90 385 73 402 82
-            C416 90 411 111 432 115
+            M429 89
+            C449 106 463 111 475 97
+            C489 81 475 66 463 77
+            C450 89 468 109 486 104
+            C504 99 514 82 526 91
+            C538 100 531 116 548 122
           "/>
 
         </g>
@@ -314,10 +312,11 @@ body {
     </div>
   </div>
 
-  <p class="signup-intro">BE FIRST TO THE DROP.</p>
+  <p class="signup-intro">
+    SIGN UP TO NOT MISS THE BIG 99% DISCOUNT DROP.
+  </p>
 
   <form id="signup-form" class="signup-form" novalidate>
-
     <label class="sr-only" for="email">Email address</label>
     <input id="email" name="email" type="email"
       autocomplete="email"
@@ -361,7 +360,6 @@ body {
         <label class="sr-only" for="password">
           Access password
         </label>
-
         <input id="password" name="password"
           type="password"
           placeholder="ENTER PASSWORD"
