@@ -1,62 +1,85 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050505">
-  <meta name="description" content="AYKAY — first drop coming soon. Sign up for launch updates and early access.">
-  <title>AYKAY — Coming Soon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="AYKAY — First Drop 001">
+  <title>aykay — First Drop 001</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <main class="page-shell">
     <section class="landing" aria-labelledby="brand-name">
-      <div class="topline"><span class="topline-line"></span><span>FIRST DROP · 001</span><span class="topline-line"></span></div>
 
-      <div class="brand-area">
-        <h1 id="brand-name" class="embroidered" aria-label="AYKAY">AYKAY</h1>
-        <p class="tagline">BUILT DIFFERENT. WORN YOUR WAY.</p>
+      <div class="topline">
+        <span>FIRST DROP 001</span>
       </div>
 
-      <div class="message-block">
-        <p class="eyebrow">THE WAIT IS ALMOST OVER</p>
-        <h2>Something is<br><span>in the making.</span></h2>
-        <p class="intro">Sign up to hear when the first drop lands.<br>Early access will be limited.</p>
+      <div class="brand-area">
+        <h1 id="brand-name" class="embroidered">aykay</h1>
       </div>
 
       <form id="signup-form" class="signup-form" novalidate>
         <label class="sr-only" for="email">Email address</label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="EMAIL ADDRESS" maxlength="254" required>
+        <input id="email" name="email" type="email"
+          autocomplete="email" placeholder="EMAIL ADDRESS"
+          maxlength="254" required>
+
         <div class="consent-row">
-          <input id="consent" name="consent" type="checkbox" required>
-          <label for="consent">I agree to receive AYKAY launch updates by email. I can unsubscribe at any time.</label>
+          <input id="consent" name="consent"
+            type="checkbox" required>
+          <label for="consent">
+            I agree to receive AYKAY launch updates by email.
+            I can unsubscribe at any time.
+          </label>
         </div>
-        <input class="website-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="submit-button" type="submit"><span>JOIN THE LIST</span><span aria-hidden="true">↗</span></button>
-        <p id="signup-status" class="status" role="status" aria-live="polite"></p>
+
+        <input class="website-field" type="text"
+          name="website" tabindex="-1"
+          autocomplete="off" aria-hidden="true">
+
+        <button class="submit-button" type="submit">
+          <span>JOIN THE LIST</span>
+        </button>
+
+        <p id="signup-status" class="status"
+          role="status" aria-live="polite"></p>
       </form>
 
       <div class="access-area">
-        <button id="password-toggle" class="password-toggle" type="button" aria-expanded="false" aria-controls="password-panel">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v3"></path></svg>
+        <button id="password-toggle" class="password-toggle"
+          type="button" aria-expanded="false"
+          aria-controls="password-panel">
           <span>EARLY ACCESS</span>
-          <span class="toggle-mark" aria-hidden="true">+</span>
+          <span class="toggle-mark">+</span>
         </button>
+
         <div id="password-panel" class="password-panel" hidden>
           <p>Have an access password?</p>
           <form id="access-form" novalidate>
-            <label class="sr-only" for="password">Access password</label>
-            <input id="password" name="password" type="password" placeholder="ENTER PASSWORD" autocomplete="current-password" required>
-            <button class="access-submit" type="submit">UNLOCK</button>
+            <label class="sr-only" for="password">
+              Access password
+            </label>
+            <input id="password" name="password"
+              type="password" placeholder="ENTER PASSWORD"
+              autocomplete="current-password" required>
+            <button class="access-submit" type="submit">
+              UNLOCK
+            </button>
           </form>
-          <p id="access-status" class="status" role="status" aria-live="polite"></p>
+          <p id="access-status" class="status"
+            role="status" aria-live="polite"></p>
         </div>
       </div>
 
-      <footer class="footer"><span>AYKAY®</span><span>EST. 2026</span><a href="/privacy.html">PRIVACY</a></footer>
+      <footer class="footer">
+        <span>AYKAY®</span>
+        <span>EST. 2026</span>
+        <a href="/privacy.html">PRIVACY</a>
+      </footer>
+
     </section>
   </main>
   <script src="/app.js" defer></script>
