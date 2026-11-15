@@ -5,10 +5,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#050505">
+
 <title>AYKAY — First Drop 001</title>
 
 <style>
-* { box-sizing: border-box; }
+@font-face {
+  font-family: "Like A Rope";
+  src: url("/fonts/like-a-rope.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
@@ -24,7 +35,7 @@ body {
 .page-shell {
   min-height: 100vh;
   min-height: 100svh;
-  padding: 25px 22px;
+  padding: 28px 22px 24px;
   display: flex;
   justify-content: center;
 }
@@ -32,71 +43,93 @@ body {
 .landing {
   width: 100%;
   max-width: 520px;
-  min-height: calc(100svh - 50px);
+  min-height: calc(100svh - 52px);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .topline {
-  padding-top: 8px;
-  color: #aaa;
+  padding-top: 12px;
+  color: #888;
   font: 10px monospace;
   letter-spacing: 4px;
 }
 
 .brand-area {
   width: 100%;
-  margin-top: auto;
-  margin-bottom: 38px;
-  text-align: center;
+  flex: 1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 0 55px;
 }
 
 .logo-stack {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 205px;
+  text-align: center;
 }
 
 .logo-background {
   position: absolute;
-  top: 0;
+  top: 17px;
   left: 50%;
   transform: translateX(-50%);
-  color: #172b46;
-  font: 700 clamp(55px, 15vw, 90px)/1 Arial, sans-serif;
+  color: #152b4c;
+  font: 900 clamp(53px, 14vw, 88px)/1 Arial, sans-serif;
   letter-spacing: 5px;
   white-space: nowrap;
-  opacity: .8;
+  opacity: .65;
 }
 
-.thread-logo {
+.logo-foreground {
   position: absolute;
   z-index: 2;
-  top: 38px;
+  top: 42px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(100%, 520px);
-  overflow: visible;
+  width: 100%;
+  color: #4385ed;
+  font-family: "Like A Rope", cursive;
+  font-size: clamp(75px, 20vw, 118px);
+  line-height: 1.1;
+  white-space: nowrap;
+  text-shadow: 0 0 12px rgba(45, 105, 210, .2);
 }
 
-.thread {
+/* Loose thread trailing from the logo */
+
+.thread-trail {
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 72%;
+  width: 38%;
+  height: 95px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.thread-trail path {
   fill: none;
-  stroke: #83b5ff;
-  stroke-width: 3.2;
+  stroke: #4385ed;
+  stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 3 4;
-  filter: drop-shadow(0 0 2px #477fc9);
+  stroke-dasharray: 2 3;
+  filter: drop-shadow(0 0 2px #2865bd);
 }
 
 .signup-intro {
   max-width: 340px;
   color: #ddd;
-  font: 11px/1.8 monospace;
+  font: 11px/1.9 monospace;
   letter-spacing: 2px;
   text-align: center;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
 
 .signup-form {
@@ -105,7 +138,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: auto;
+  margin-bottom: 0;
 }
 
 .signup-form input[type="email"],
@@ -157,6 +190,11 @@ body {
 
 .submit-button:hover {
   background: #f3dc55;
+}
+
+.submit-button:disabled {
+  opacity: .65;
+  cursor: wait;
 }
 
 .status {
@@ -231,19 +269,43 @@ body {
 }
 
 .footer a {
-  color: #555;
+  color: #777;
   text-decoration: none;
 }
 
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 380px) {
+  .logo-foreground {
+    font-size: 72px;
+  }
+
+  .logo-background {
+    font-size: 51px;
+  }
+}
 
 @media (max-height: 650px) {
-  .brand-area { margin-bottom: 22px; }
+  .brand-area {
+    min-height: 220px;
+    padding: 45px 0 25px;
+  }
+
+  .logo-stack {
+    height: 175px;
+  }
+
+  .access-area {
+    margin-top: 20px;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <main class="page-shell">
 <section class="landing">
 
@@ -254,59 +316,31 @@ body {
 
       <span class="logo-background">AYKAY</span>
 
-      <svg class="thread-logo"
-        viewBox="0 0 540 150"
-        role="img"
-        aria-label="aykay">
+      <span class="logo-foreground">aykay</span>
 
-        <g class="thread">
+      <svg
+        class="thread-trail"
+        viewBox="0 0 180 90"
+        aria-hidden="true">
 
-          <!-- First single-storey a: closed bowl and tall stem -->
-          <path d="
-            M84 63
-            C84 43 69 29 51 29
-            C31 29 18 44 18 64
-            C18 84 31 99 51 99
-            C69 99 84 84 84 64
-          "/>
-          <path d="M84 64 L84 17"/>
+        <path d="
+          M2 40
+          C22 26 34 53 52 43
+          C72 31 57 9 43 20
+          C25 34 51 66 77 53
+          C103 40 84 20 103 23
+          C125 26 119 57 139 48
+          C153 42 161 52 174 65
+        "/>
 
-          <!-- y -->
-          <path d="M119 46 L143 96"/>
-          <path d="M167 46 L143 96
-            C136 112 127 119 113 112"/>
+        <path d="
+          M8 45
+          C29 37 38 60 57 51
+          C76 42 67 29 80 31
+          C95 34 91 64 111 61
+          C132 58 133 37 151 48
+        " opacity=".45"/>
 
-          <!-- k -->
-          <path d="M211 20 L211 101"/>
-          <path d="M212 70 L247 45"/>
-          <path d="M214 69 L249 101"/>
-
-          <!-- Second single-storey a -->
-          <path d="
-            M335 63
-            C335 43 320 29 302 29
-            C282 29 269 44 269 64
-            C269 84 282 99 302 99
-            C320 99 335 84 335 64
-          "/>
-          <path d="M335 64 L335 17"/>
-
-          <!-- Final y -->
-          <path d="M370 46 L394 96"/>
-          <path d="M418 46 L394 96
-            C387 112 378 119 364 112"/>
-
-          <!-- Loose thread trailing off the right -->
-          <path d="
-            M429 89
-            C449 106 463 111 475 97
-            C489 81 475 66 463 77
-            C450 89 468 109 486 104
-            C504 99 514 82 526 91
-            C538 100 531 116 548 122
-          "/>
-
-        </g>
       </svg>
 
     </div>
@@ -317,62 +351,106 @@ body {
   </p>
 
   <form id="signup-form" class="signup-form" novalidate>
-    <label class="sr-only" for="email">Email address</label>
-    <input id="email" name="email" type="email"
+
+    <label class="sr-only" for="email">
+      Email address
+    </label>
+
+    <input
+      id="email"
+      name="email"
+      type="email"
       autocomplete="email"
       placeholder="EMAIL ADDRESS"
-      maxlength="254" required>
+      maxlength="254"
+      required>
 
     <div class="consent-row">
-      <input id="consent" name="consent"
-        type="checkbox" required>
+
+      <input
+        id="consent"
+        name="consent"
+        type="checkbox"
+        required>
+
       <label for="consent">
         I agree to receive AYKAY launch updates by email.
         I can unsubscribe at any time.
       </label>
+
     </div>
 
-    <input class="website-field" type="text"
-      name="website" tabindex="-1"
-      autocomplete="off" aria-hidden="true">
+    <input
+      class="website-field"
+      type="text"
+      name="website"
+      tabindex="-1"
+      autocomplete="off"
+      aria-hidden="true">
 
     <button class="submit-button" type="submit">
       JOIN THE LIST
     </button>
 
-    <p id="signup-status" class="status"
-      role="status" aria-live="polite"></p>
+    <p
+      id="signup-status"
+      class="status"
+      role="status"
+      aria-live="polite">
+    </p>
+
   </form>
 
   <div class="access-area">
-    <button id="password-toggle"
+
+    <button
+      id="password-toggle"
       class="password-toggle"
       type="button"
       aria-expanded="false"
       aria-controls="password-panel">
-      EARLY ACCESS <span class="toggle-mark">+</span>
+
+      EARLY ACCESS
+      <span class="toggle-mark">+</span>
+
     </button>
 
-    <div id="password-panel" class="password-panel" hidden>
+    <div
+      id="password-panel"
+      class="password-panel"
+      hidden>
+
       <p>Have an access password?</p>
 
       <form id="access-form" novalidate>
+
         <label class="sr-only" for="password">
           Access password
         </label>
-        <input id="password" name="password"
+
+        <input
+          id="password"
+          name="password"
           type="password"
           placeholder="ENTER PASSWORD"
-          autocomplete="current-password" required>
+          autocomplete="current-password"
+          required>
 
         <button class="access-submit" type="submit">
           UNLOCK
         </button>
+
       </form>
 
-      <p id="access-status" class="status"
-        role="status" aria-live="polite"></p>
+      <p
+        id="access-status"
+        class="status"
+        role="status"
+        aria-live="polite">
+      </p>
+
     </div>
+
   </div>
 
   <footer class="footer">
@@ -385,5 +463,6 @@ body {
 </main>
 
 <script src="/app.js" defer></script>
+
 </body>
 </html>
