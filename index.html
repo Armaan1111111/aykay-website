@@ -39,10 +39,11 @@ body {
   display: flex;
   justify-content: center;
 
+  /* FOOTBALL BACKGROUND */
   background-color: #050505;
   background-image:
     linear-gradient(
-      rgba(0,0,0,.48),
+      rgba(0,0,0,.38),
       rgba(0,0,0,.48)
     ),
     url("/05FC0C80-90BF-4576-A227-3812A9C9B4B3.png");
@@ -63,18 +64,19 @@ body {
   position: relative;
 }
 
+/* FIRST DROP 001 */
+
 .topline {
   width: 100%;
   padding: 12px 0;
+  background: #000;
   color: #888;
   font: 10px monospace;
   letter-spacing: 4px;
   text-align: center;
-
-  background: #000;
 }
 
-/* BRAND LOGO */
+/* BRAND AREA */
 
 .brand-area {
   width: 100%;
@@ -83,44 +85,43 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 28px 0 0 4px;
+  padding: 18px 0 0 0;
+  position: relative;
 }
+
+/* SMALL AYKAY LOGO — NO BOX */
 
 .logo-stack {
   position: relative;
-  width: 205px;
-  height: 91px;
-  padding: 5px 9px;
+  width: 155px;
+  height: 76px;
+  background: transparent;
+  border: none;
+  padding: 0;
   text-align: left;
-
-  background: rgba(0,0,0,.72);
-  border: 1px solid rgba(255,255,255,.12);
 }
 
 .logo-background {
   position: absolute;
-  top: 5px;
-  left: 9px;
-
+  top: 2px;
+  left: 2px;
   color: #152b4c;
-  font: 900 39px/1 Arial, sans-serif;
+  font: 900 29px/1 Arial, sans-serif;
   letter-spacing: 2px;
   white-space: nowrap;
-  opacity: .85;
+  opacity: .9;
 }
 
 .logo-foreground {
   position: absolute;
   z-index: 2;
-  top: 32px;
-  left: 8px;
-
+  top: 27px;
+  left: 2px;
   color: #4385ed;
   font-family: "Like A Rope", cursive;
-  font-size: 57px;
+  font-size: 43px;
   line-height: 1;
   white-space: nowrap;
-
   text-shadow: 0 0 8px rgba(45,105,210,.2);
 }
 
@@ -156,11 +157,9 @@ body {
   height: 48px;
   width: 100%;
   padding: 0 15px;
-
   background: #050505;
   border: 1px solid #333;
   color: white;
-
   font: 11px monospace;
   letter-spacing: 2px;
   outline: none;
@@ -176,6 +175,8 @@ body {
   border-color: #888;
 }
 
+/* CONSENT */
+
 .consent-row {
   display: flex;
   align-items: flex-start;
@@ -190,12 +191,13 @@ body {
   accent-color: #e5cc39;
 }
 
+/* JOIN BUTTON */
+
 .submit-button {
   height: 48px;
   background: #e5cc39;
   border: 0;
   color: #050505;
-
   font: 700 11px monospace;
   letter-spacing: 3px;
   cursor: pointer;
@@ -210,11 +212,15 @@ body {
   cursor: wait;
 }
 
+/* STATUS */
+
 .status {
   color: #aaa;
   font-size: 11px;
   text-align: center;
 }
+
+/* HIDDEN FIELDS */
 
 .website-field,
 .sr-only {
@@ -272,7 +278,7 @@ body {
   cursor: pointer;
 }
 
-/* FOOTER */
+/* FOOTER — PRIVACY REMOVED */
 
 .footer {
   width: 100%;
@@ -293,23 +299,24 @@ body {
 
 @media (max-width: 380px) {
   .logo-stack {
-    width: 190px;
-    height: 84px;
+    width: 145px;
   }
 
   .logo-background {
-    font-size: 35px;
+    font-size: 27px;
   }
 
   .logo-foreground {
-    font-size: 52px;
+    font-size: 40px;
   }
 }
+
+/* SHORT SCREENS */
 
 @media (max-height: 650px) {
   .brand-area {
     min-height: 220px;
-    padding-top: 20px;
+    padding-top: 14px;
   }
 
   .access-area {
