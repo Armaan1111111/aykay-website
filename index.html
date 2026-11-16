@@ -17,9 +17,7 @@
   font-display: swap;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -30,19 +28,6 @@ html, body {
 body {
   color: #fff;
   font-family: Arial, sans-serif;
-
-  background-color: #050505;
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.40),
-      rgba(0,0,0,.55)
-    ),
-    url("/05FC0C80-90BF-4576-A227-3812A9C9B4B3.png");
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .page-shell {
@@ -62,46 +47,45 @@ body {
   align-items: center;
 }
 
-/* FIRST DROP 001 */
-
 .topline {
-  width: 100%;
-  padding: 14px 0;
-  background: #000;
+  padding-top: 12px;
   color: #888;
   font: 10px monospace;
   letter-spacing: 4px;
-  text-align: center;
 }
-
-/* AYKAY LOGO — TOP LEFT */
 
 .brand-area {
   width: 100%;
   flex: 1;
   min-height: 300px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 12px 0 55px;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 0 55px;
+  position: relative;
 }
 
+/* AYKAY LOGO */
+
 .logo-stack {
-  position: relative;
-  width: 195px;
-  height: 95px;
-  background: transparent;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: min(270px, 75%);
+  height: 130px;
   text-align: left;
-  padding: 5px;
+  background: rgba(0, 0, 0, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 10px 14px;
 }
 
 .logo-background {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 8px;
+  left: 14px;
   color: #152b4c;
-  font: 900 38px/1 Arial, sans-serif;
-  letter-spacing: 2px;
+  font: 900 48px/1 Arial, sans-serif;
+  letter-spacing: 3px;
   white-space: nowrap;
   opacity: .85;
 }
@@ -109,23 +93,21 @@ body {
 .logo-foreground {
   position: absolute;
   z-index: 2;
-  top: 38px;
-  left: 5px;
+  top: 48px;
+  left: 14px;
+  width: auto;
   color: #4385ed;
   font-family: "Like A Rope", cursive;
-  font-size: 52px;
-  line-height: 1;
+  font-size: 65px;
+  line-height: 1.1;
   white-space: nowrap;
-  text-shadow: 0 0 12px rgba(45,105,210,.2);
+  text-shadow: 0 0 12px rgba(45, 105, 210, .2);
 }
 
-/* PROMOTIONAL MESSAGE */
+/* Promotional message */
 
 .signup-intro {
-  width: 100%;
   max-width: 340px;
-  padding: 0;
-  background: transparent;
   color: #ddd;
   font: 11px/1.9 monospace;
   letter-spacing: 2px;
@@ -139,7 +121,7 @@ body {
   white-space: nowrap;
 }
 
-/* SIGNUP FORM */
+/* Signup form */
 
 .signup-form {
   width: 100%;
@@ -147,11 +129,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 0;
-  background: transparent;
 }
-
-/* BLACK EMAIL BOX */
 
 .signup-form input[type="email"],
 .password-panel input {
@@ -159,7 +137,7 @@ body {
   width: 100%;
   padding: 0 15px;
   background: #000;
-  border: 1px solid #444;
+  border: 1px solid #333;
   color: white;
   font: 11px monospace;
   letter-spacing: 2px;
@@ -176,8 +154,6 @@ body {
   border-color: #888;
 }
 
-/* CONSENT */
-
 .consent-row {
   display: flex;
   align-items: flex-start;
@@ -192,8 +168,6 @@ body {
   accent-color: #e5cc39;
 }
 
-/* YELLOW BUTTON */
-
 .submit-button {
   height: 48px;
   background: #e5cc39;
@@ -202,7 +176,6 @@ body {
   font: 700 11px monospace;
   letter-spacing: 3px;
   cursor: pointer;
-  transition: background .2s ease;
 }
 
 .submit-button:hover {
@@ -214,15 +187,11 @@ body {
   cursor: wait;
 }
 
-/* STATUS */
-
 .status {
   color: #aaa;
   font-size: 11px;
   text-align: center;
 }
-
-/* HIDDEN FIELDS */
 
 .website-field,
 .sr-only {
@@ -233,7 +202,7 @@ body {
   clip: rect(0,0,0,0);
 }
 
-/* EARLY ACCESS */
+/* Early access */
 
 .access-area {
   width: 100%;
@@ -245,7 +214,7 @@ body {
 .password-toggle {
   background: none;
   border: 0;
-  color: #aaa;
+  color: #777;
   font: 10px monospace;
   letter-spacing: 3px;
   cursor: pointer;
@@ -257,7 +226,6 @@ body {
 
 .password-panel {
   margin-top: 20px;
-  background: transparent;
 }
 
 .password-panel p {
@@ -281,68 +249,42 @@ body {
   cursor: pointer;
 }
 
-/* FOOTER */
+/* Footer */
 
 .footer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 35px;
   padding-top: 25px;
-  color: #aaa;
+  color: #555;
   font: 9px monospace;
   letter-spacing: 2px;
 }
-
-.footer a {
-  color: #aaa;
-  text-decoration: none;
-}
-
-/* HIDDEN */
 
 [hidden] {
   display: none !important;
 }
 
-/* MOBILE */
-
 @media (max-width: 380px) {
   .logo-stack {
-    width: 185px;
+    width: 250px;
+    height: 115px;
   }
 
-  .logo-background {
-    font-size: 35px;
-  }
-
-  .logo-foreground {
-    font-size: 48px;
-  }
+  .logo-foreground { font-size: 55px; }
+  .logo-background { font-size: 42px; }
 }
-
-/* SHORT SCREENS */
 
 @media (max-height: 650px) {
   .brand-area {
     min-height: 220px;
-    padding: 12px 0 25px;
+    padding: 45px 0 25px;
   }
 
-  .logo-stack {
-    height: 95px;
-  }
-
-  .access-area {
-    margin-top: 20px;
-  }
-
-  .footer {
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+  .logo-stack { height: 130px; }
+  .access-area { margin-top: 20px; }
 }
-
 </style>
 </head>
 
@@ -351,9 +293,7 @@ body {
 <main class="page-shell">
 <section class="landing">
 
-  <div class="topline">
-    FIRST DROP 001
-  </div>
+  <div class="topline">FIRST DROP 001</div>
 
   <div class="brand-area">
     <div class="logo-stack">
@@ -374,9 +314,7 @@ body {
 
   <form id="signup-form" class="signup-form" novalidate>
 
-    <label class="sr-only" for="email">
-      Email address
-    </label>
+    <label class="sr-only" for="email">Email address</label>
 
     <input
       id="email"
@@ -414,12 +352,7 @@ body {
       JOIN THE LIST
     </button>
 
-    <p
-      id="signup-status"
-      class="status"
-      role="status"
-      aria-live="polite">
-    </p>
+    <p id="signup-status" class="status" role="status" aria-live="polite"></p>
 
   </form>
 
@@ -437,18 +370,13 @@ body {
 
     </button>
 
-    <div
-      id="password-panel"
-      class="password-panel"
-      hidden>
+    <div id="password-panel" class="password-panel" hidden>
 
       <p>Have an access password?</p>
 
       <form id="access-form" novalidate>
 
-        <label class="sr-only" for="password">
-          Access password
-        </label>
+        <label class="sr-only" for="password">Access password</label>
 
         <input
           id="password"
@@ -464,12 +392,7 @@ body {
 
       </form>
 
-      <p
-        id="access-status"
-        class="status"
-        role="status"
-        aria-live="polite">
-      </p>
+      <p id="access-status" class="status" role="status" aria-live="polite"></p>
 
     </div>
 
@@ -477,7 +400,6 @@ body {
 
   <footer class="footer">
     <span>AYKAY®</span>
-    <a href="/privacy.html">PRIVACY</a>
   </footer>
 
 </section>
