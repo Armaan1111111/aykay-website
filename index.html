@@ -17,7 +17,9 @@
   font-display: swap;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
@@ -28,6 +30,19 @@ html, body {
 body {
   color: #fff;
   font-family: Arial, sans-serif;
+
+  /* ORIGINAL FOOTBALL BACKGROUND */
+  background-color: #050505;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("/05FC0C80-90BF-4576-A227-3812A9C9B4B3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .page-shell {
@@ -47,12 +62,20 @@ body {
   align-items: center;
 }
 
+/* FIRST DROP BLACK BORDER */
+
 .topline {
-  padding-top: 12px;
+  width: 100%;
+  padding: 22px 12px;
+  margin-top: 0;
+  background: #000;
   color: #888;
   font: 10px monospace;
   letter-spacing: 4px;
+  text-align: center;
 }
+
+/* BRAND AREA */
 
 .brand-area {
   width: 100%;
@@ -65,7 +88,7 @@ body {
   position: relative;
 }
 
-/* AYKAY LOGO */
+/* AYKAY LOGO BLACK TRANSPARENT BORDER */
 
 .logo-stack {
   position: absolute;
@@ -74,8 +97,10 @@ body {
   width: min(270px, 75%);
   height: 130px;
   text-align: left;
+
   background: rgba(0, 0, 0, 0.58);
   border: 1px solid rgba(255, 255, 255, 0.14);
+
   padding: 10px 14px;
 }
 
@@ -104,7 +129,7 @@ body {
   text-shadow: 0 0 12px rgba(45, 105, 210, .2);
 }
 
-/* Promotional message */
+/* PROMOTIONAL MESSAGE */
 
 .signup-intro {
   max-width: 340px;
@@ -121,7 +146,7 @@ body {
   white-space: nowrap;
 }
 
-/* Signup form */
+/* SIGNUP FORM */
 
 .signup-form {
   width: 100%;
@@ -202,7 +227,7 @@ body {
   clip: rect(0,0,0,0);
 }
 
-/* Early access */
+/* EARLY ACCESS */
 
 .access-area {
   width: 100%;
@@ -249,7 +274,7 @@ body {
   cursor: pointer;
 }
 
-/* Footer */
+/* FOOTER - PRIVACY REMOVED */
 
 .footer {
   width: 100%;
@@ -266,15 +291,24 @@ body {
   display: none !important;
 }
 
+/* MOBILE */
+
 @media (max-width: 380px) {
   .logo-stack {
     width: 250px;
     height: 115px;
   }
 
-  .logo-foreground { font-size: 55px; }
-  .logo-background { font-size: 42px; }
+  .logo-foreground {
+    font-size: 55px;
+  }
+
+  .logo-background {
+    font-size: 42px;
+  }
 }
+
+/* SHORT SCREENS */
 
 @media (max-height: 650px) {
   .brand-area {
@@ -282,9 +316,15 @@ body {
     padding: 45px 0 25px;
   }
 
-  .logo-stack { height: 130px; }
-  .access-area { margin-top: 20px; }
+  .logo-stack {
+    height: 130px;
+  }
+
+  .access-area {
+    margin-top: 20px;
+  }
 }
+
 </style>
 </head>
 
@@ -296,6 +336,7 @@ body {
   <div class="topline">FIRST DROP 001</div>
 
   <div class="brand-area">
+
     <div class="logo-stack">
 
       <span class="logo-background">AYKAY</span>
@@ -303,6 +344,7 @@ body {
       <span class="logo-foreground">aykay</span>
 
     </div>
+
   </div>
 
   <p class="signup-intro">
