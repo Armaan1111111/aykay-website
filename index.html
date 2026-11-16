@@ -30,19 +30,6 @@ html, body {
 body {
   color: #fff;
   font-family: Arial, sans-serif;
-
-  /* ORIGINAL FOOTBALL BACKGROUND */
-  background-color: #050505;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.65)
-    ),
-    url("/05FC0C80-90BF-4576-A227-3812A9C9B4B3.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .page-shell {
@@ -51,6 +38,19 @@ body {
   padding: 28px 22px 24px;
   display: flex;
   justify-content: center;
+
+  background-color: #050505;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,.48),
+      rgba(0,0,0,.48)
+    ),
+    url("/05FC0C80-90BF-4576-A227-3812A9C9B4B3.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .landing {
@@ -60,57 +60,51 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
-
-/* FIRST DROP BLACK BORDER */
 
 .topline {
   width: 100%;
-  padding: 22px 12px;
-  margin-top: 0;
-  background: #000;
+  padding: 12px 0;
   color: #888;
   font: 10px monospace;
   letter-spacing: 4px;
   text-align: center;
+
+  background: #000;
 }
 
-/* BRAND AREA */
+/* BRAND LOGO */
 
 .brand-area {
   width: 100%;
   flex: 1;
   min-height: 300px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 90px 0 55px;
-  position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 28px 0 0 4px;
 }
 
-/* AYKAY LOGO BLACK TRANSPARENT BORDER */
-
 .logo-stack {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  width: min(270px, 75%);
-  height: 130px;
+  position: relative;
+  width: 205px;
+  height: 91px;
+  padding: 5px 9px;
   text-align: left;
 
-  background: rgba(0, 0, 0, 0.58);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-
-  padding: 10px 14px;
+  background: rgba(0,0,0,.72);
+  border: 1px solid rgba(255,255,255,.12);
 }
 
 .logo-background {
   position: absolute;
-  top: 8px;
-  left: 14px;
+  top: 5px;
+  left: 9px;
+
   color: #152b4c;
-  font: 900 48px/1 Arial, sans-serif;
-  letter-spacing: 3px;
+  font: 900 39px/1 Arial, sans-serif;
+  letter-spacing: 2px;
   white-space: nowrap;
   opacity: .85;
 }
@@ -118,15 +112,16 @@ body {
 .logo-foreground {
   position: absolute;
   z-index: 2;
-  top: 48px;
-  left: 14px;
-  width: auto;
+  top: 32px;
+  left: 8px;
+
   color: #4385ed;
   font-family: "Like A Rope", cursive;
-  font-size: 65px;
-  line-height: 1.1;
+  font-size: 57px;
+  line-height: 1;
   white-space: nowrap;
-  text-shadow: 0 0 12px rgba(45, 105, 210, .2);
+
+  text-shadow: 0 0 8px rgba(45,105,210,.2);
 }
 
 /* PROMOTIONAL MESSAGE */
@@ -161,9 +156,11 @@ body {
   height: 48px;
   width: 100%;
   padding: 0 15px;
-  background: #000;
+
+  background: #050505;
   border: 1px solid #333;
   color: white;
+
   font: 11px monospace;
   letter-spacing: 2px;
   outline: none;
@@ -198,6 +195,7 @@ body {
   background: #e5cc39;
   border: 0;
   color: #050505;
+
   font: 700 11px monospace;
   letter-spacing: 3px;
   cursor: pointer;
@@ -274,7 +272,7 @@ body {
   cursor: pointer;
 }
 
-/* FOOTER - PRIVACY REMOVED */
+/* FOOTER */
 
 .footer {
   width: 100%;
@@ -295,36 +293,29 @@ body {
 
 @media (max-width: 380px) {
   .logo-stack {
-    width: 250px;
-    height: 115px;
-  }
-
-  .logo-foreground {
-    font-size: 55px;
+    width: 190px;
+    height: 84px;
   }
 
   .logo-background {
-    font-size: 42px;
+    font-size: 35px;
+  }
+
+  .logo-foreground {
+    font-size: 52px;
   }
 }
-
-/* SHORT SCREENS */
 
 @media (max-height: 650px) {
   .brand-area {
     min-height: 220px;
-    padding: 45px 0 25px;
-  }
-
-  .logo-stack {
-    height: 130px;
+    padding-top: 20px;
   }
 
   .access-area {
     margin-top: 20px;
   }
 }
-
 </style>
 </head>
 
@@ -333,10 +324,11 @@ body {
 <main class="page-shell">
 <section class="landing">
 
-  <div class="topline">FIRST DROP 001</div>
+  <div class="topline">
+    FIRST DROP 001
+  </div>
 
   <div class="brand-area">
-
     <div class="logo-stack">
 
       <span class="logo-background">AYKAY</span>
@@ -344,7 +336,6 @@ body {
       <span class="logo-foreground">aykay</span>
 
     </div>
-
   </div>
 
   <p class="signup-intro">
@@ -356,7 +347,9 @@ body {
 
   <form id="signup-form" class="signup-form" novalidate>
 
-    <label class="sr-only" for="email">Email address</label>
+    <label class="sr-only" for="email">
+      Email address
+    </label>
 
     <input
       id="email"
@@ -394,7 +387,12 @@ body {
       JOIN THE LIST
     </button>
 
-    <p id="signup-status" class="status" role="status" aria-live="polite"></p>
+    <p
+      id="signup-status"
+      class="status"
+      role="status"
+      aria-live="polite">
+    </p>
 
   </form>
 
@@ -412,13 +410,18 @@ body {
 
     </button>
 
-    <div id="password-panel" class="password-panel" hidden>
+    <div
+      id="password-panel"
+      class="password-panel"
+      hidden>
 
       <p>Have an access password?</p>
 
       <form id="access-form" novalidate>
 
-        <label class="sr-only" for="password">Access password</label>
+        <label class="sr-only" for="password">
+          Access password
+        </label>
 
         <input
           id="password"
@@ -434,7 +437,12 @@ body {
 
       </form>
 
-      <p id="access-status" class="status" role="status" aria-live="polite"></p>
+      <p
+        id="access-status"
+        class="status"
+        role="status"
+        aria-live="polite">
+      </p>
 
     </div>
 
